@@ -1,0 +1,8 @@
+res://levels/world_01.tscn
+res://scripts/warning_sign.gd
+res://actors/goblin.tscn
+res://prefabs/hitbox.tscn
+res://actors/player.tscn
+res://prefabs/dialog_box.tscn
+res://singletons/dialog_manager.gd
+res://scripts/dialog_box.gd
