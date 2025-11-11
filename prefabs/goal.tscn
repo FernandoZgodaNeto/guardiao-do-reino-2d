@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ej5dry0rnkqv"]
+
+[ext_resource type="Script" path="res://scripts/goal.gd" id="1_3xggy"]
+[ext_resource type="Texture2D" uid="uid://cpach02dkre6g" path="res://assets/Medieval_Castle_Asset_Pack/Decorations/flag_red.png" id="1_mu0ob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7b7o"]
+size = Vector2(29, 44)
+
+[node name="goal" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_3xggy")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-7.15256e-07, -13)
+scale = Vector2(0.487035, 0.487035)
+texture = ExtResource("1_mu0ob")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -7)
+shape = SubResource("RectangleShape2D_u7b7o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

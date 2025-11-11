@@ -136,7 +136,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyejs"]
-size = Vector2(8, 1.5)
+size = Vector2(10, 1.5)
 
 [node name="goblin" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
@@ -156,7 +156,6 @@ shape = SubResource("RectangleShape2D_2nr3o")
 [node name="anim" type="AnimationPlayer" parent="."]
 root_node = NodePath("../texture")
 autoplay = "walk"
-speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_6n37b")
 }

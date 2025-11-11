@@ -1,5 +1,6 @@
 extends Area2D
 
+var lifes := 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +14,11 @@ func _process(delta):
 
 func _on_body_entered(body):
 	$anim.play("collect")
+	await $collision.call_deferred("queue_free")
+	if (Globals.player_life < 3):
+		Globals.player_life += 1
 
 
 func _on_anim_animation_finished():
-	queue_free()
+	if $anim.animation == "collect":
+		queue_free()

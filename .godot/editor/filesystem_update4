@@ -1,8 +1,9 @@
+res://actors/monster.tscn
+res://levels/world_03.tscn
 res://levels/world_01.tscn
-res://scripts/warning_sign.gd
 res://actors/goblin.tscn
-res://prefabs/hitbox.tscn
-res://actors/player.tscn
-res://prefabs/dialog_box.tscn
-res://singletons/dialog_manager.gd
-res://scripts/dialog_box.gd
+res://scripts/goblin.gd
+res://levels/world_04.tscn
+res://levels/world_02.tscn
+res://levels/world_05.tscn
+res://actors/golem.tscn

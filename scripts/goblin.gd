@@ -10,6 +10,8 @@ var can_move = true
 @onready var texture := $texture as Sprite2D
 @onready var anim := $anim
 
+@export var enemy_score := 50
+
 var direction := -1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -41,4 +43,5 @@ func _physics_process(delta):
 
 func _on_anim_animation_finished(anim_name):
 	if anim_name == "death":
+		Globals.score += enemy_score
 		queue_free()
