@@ -1,9 +1,4 @@
-res://actors/monster.tscn
-res://levels/world_03.tscn
-res://levels/world_01.tscn
-res://actors/goblin.tscn
-res://scripts/goblin.gd
-res://levels/world_04.tscn
-res://levels/world_02.tscn
+res://levels/end.tscn
 res://levels/world_05.tscn
-res://actors/golem.tscn
+res://levels/world_01.tscn
+res://levels/world_06.tscn

@@ -1,12 +1,12 @@
-AudioStreamPlayer
+Label
 ColorRect
+AudioStreamPlayer
 CanvasLayer
 CollisionShape2D
 Area2D
 Button
 VBoxContainer
 TextureRect
-Label
 HBoxContainer
 MarginContainer
 Control

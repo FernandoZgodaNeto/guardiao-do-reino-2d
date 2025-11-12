@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://cx0l4wt7iom7g"]
 
 [ext_resource type="Script" path="res://scripts/goblin.gd" id="1_866uy"]
-[ext_resource type="Texture2D" uid="uid://ca4fj8gqydt2u" path="res://assets/Monster/dark fantasy big boss walk.png" id="2_sk4be"]
-[ext_resource type="Texture2D" uid="uid://budlxvje2f4fq" path="res://assets/Monster/dark fantasy big boss death.png" id="3_a46yo"]
+[ext_resource type="Texture2D" uid="uid://5yww1hmmsawo" path="res://assets/Golem/Golem_1_walk.png" id="2_2rve7"]
+[ext_resource type="Texture2D" uid="uid://cnpbf7thf8a5q" path="res://assets/Golem/Golem_1_hurt.png" id="3_brfl7"]
 [ext_resource type="PackedScene" uid="uid://cljdot61lin5p" path="res://prefabs/hitbox.tscn" id="4_7yr6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nr3o"]
 size = Vector2(36, 36.5)
 
-[sub_resource type="Animation" id="Animation_j6ld2"]
+[sub_resource type="Animation" id="Animation_dd5e4"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_sk4be")]
+"values": [ExtResource("2_2rve7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -32,7 +32,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [16]
+"values": [10]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -47,9 +47,48 @@ tracks/2/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_x7lya"]
-resource_name = "wal_monster"
-length = 1.6
+[sub_resource type="Animation" id="Animation_1ss8y"]
+resource_name = "death"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_brfl7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_eumvr"]
+resource_name = "walk"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -61,7 +100,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_sk4be")]
+"values": [ExtResource("2_2rve7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -73,7 +112,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [16]
+"values": [10]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -82,57 +121,17 @@ tracks/2/path = NodePath(".:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-}
-
-[sub_resource type="Animation" id="Animation_nqvua"]
-resource_name = "monster_monster"
-length = 1.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_a46yo")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [16]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6n37b"]
 _data = {
-"RESET": SubResource("Animation_j6ld2"),
-"death": SubResource("Animation_nqvua"),
-"walk": SubResource("Animation_x7lya")
+"RESET": SubResource("Animation_dd5e4"),
+"death": SubResource("Animation_1ss8y"),
+"walk": SubResource("Animation_eumvr")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyejs"]
@@ -146,8 +145,8 @@ script = ExtResource("1_866uy")
 [node name="texture" type="Sprite2D" parent="." groups=["enemies"]]
 position = Vector2(0, -42)
 scale = Vector2(-1.24582, 1.31312)
-texture = ExtResource("2_sk4be")
-hframes = 16
+texture = ExtResource("2_2rve7")
+hframes = 10
 region_rect = Rect2(21.9474, 87.0395, 477.551, 28.9855)
 
 [node name="collision" type="CollisionShape2D" parent="."]
@@ -164,13 +163,13 @@ libraries = {
 
 [node name="wall_detector" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
-target_position = Vector2(-15, 0)
+target_position = Vector2(-20, 0)
 collision_mask = 6
 
 [node name="hitbox" parent="." instance=ExtResource("4_7yr6t")]
 
 [node name="collision2" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(4, -40)
+position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_lyejs")
 
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
